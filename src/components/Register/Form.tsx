@@ -23,7 +23,7 @@ const Form: React.FC<FormProps> = () => {
         name?: string;
         student_number?: string;
         phone?: string;
-        year?: string;
+        year?: number;
         hosteller?: string;
         gender?: string;
         roll_number?: string;
@@ -48,7 +48,7 @@ const Form: React.FC<FormProps> = () => {
             name: data.name.trim(),
             student_number: data.st_no.trim(),
             phone: data.phone_no.trim(),
-            year: data.year,
+            year: parseInt(data.year),
             hosteller: data.hosteller,
             gender: data.gender,
             roll_number: data.roll_no.trim(),
@@ -127,7 +127,6 @@ const Form: React.FC<FormProps> = () => {
 
         console.warn(data, '108');
 
-        // Uncomment the following code when you're ready to make the API call
         // await axios.post("https://hackubator-backend.silive.in/api/register/",data)
         // .then((res)=>{
         //   console.log(res)
