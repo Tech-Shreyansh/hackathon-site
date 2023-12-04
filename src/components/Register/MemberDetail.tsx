@@ -90,7 +90,7 @@ const Detail: React.FC<DetailProps> = (props) => {
 
     return (
         <>
-            <section className="newClass w-full">
+            <section className="w-full">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex justify-between">
                         <p className="font-bold text-blue-600 mb-4">{`Member ${index}`} Detail</p>
