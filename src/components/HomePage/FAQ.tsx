@@ -27,7 +27,7 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="bg-yellow-300 p-8 flex flex-col gap-8 border-b-4 border-black">
+        <div id="faqs" className="bg-yellow-300 px-8 py-12  flex flex-col gap-8 border-b-4 border-black">
             <p className="text-4xl lg:text-5xl text-center font-extrabold">Frequently Asked Questions</p>
             <div className="flex flex-col gap-4 m-4">
                 {faqs.map((faq)=><Accordion question={faq.question} answer={faq.answer} />)}

@@ -79,7 +79,7 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="bg-indigo-400 p-8 flex flex-col gap-8 border-b-4 border-black">
+        <div id="timeline" className="bg-indigo-400 px-8 py-12  flex flex-col gap-8 border-b-4 border-black">
             <p className="text-4xl lg:text-5xl text-center font-extrabold">Timeline</p>
             <div className="flex flex-col md:flex-row justify-around space-y-4 md:space-y-0">
                 <div className="md:w-2/5 lg:w-1/3 rounded-md border-2 border-black bg-yellow-100 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">

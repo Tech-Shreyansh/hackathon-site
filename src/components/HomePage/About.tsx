@@ -1,9 +1,9 @@
 function About() {
   return (
-    <>
-      <div className="bg-pink-500 py-16 px-12 mt-4 border-b-4 border-t-4 border-black flex justify-center md:px-28">
-        <div className="bg-white rounded-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6 flex flex-col">
-          <p className="text-2xl font-semibold mb-3 md:text-3xl lg:text-4xl">About WinterHacks</p>
+    <div id="about">
+      <div className="bg-pink-500 px-8 py-12  flex flex-col gap-8 border-b-4 border-black">
+        <p className="text-4xl lg:text-5xl text-center font-extrabold">About WinterHacks</p>
+        <div className="w-3/4 mx-auto bg-white rounded-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6 flex flex-col">
           <p className="text-base md:text-lg lg:text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
             nisi, corporis fugiat qui voluptatum iusto molestias sequi eos saepe
@@ -15,7 +15,7 @@ function About() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

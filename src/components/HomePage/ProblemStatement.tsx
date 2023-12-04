@@ -79,7 +79,7 @@ const ProblemStatement = () => {
     };
 
     return (
-        <div className="bg-orange-400 p-8 flex flex-col gap-8 border-b-4 border-black">
+        <div id="ps" className="bg-orange-400 px-8 py-12  flex flex-col gap-8 border-b-4 border-black">
             <p className="text-4xl lg:text-5xl text-center font-extrabold">Problem Statements</p>
             <Slider ref={sliderRef} {...settings}>
                 {problemStatements.map((statement, index) => (
