@@ -50,7 +50,7 @@ const Timeline = () => {
         },
         {
             time: "1:30 p.m.",
-            event: "Presentations begin",
+            event: "Presentation begins",
         },
         {
             time: "4 p.m.",
@@ -62,7 +62,7 @@ const Timeline = () => {
         // },
         {
             time: "5 p.m.",
-            event: "Result Announcement",
+            event: "Results",
         },
         // {
         //     time: "3 p.m.",
@@ -87,7 +87,7 @@ const Timeline = () => {
                     <div className="flex flex-col gap-4 p-4">
                         {timeline_day1.map((event)=>
                             <div className="flex gap-4 justify-center">
-                                <div className="w-1/4 p-2 text-xs rounded-full border border-black bg-[#bc95d4] text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
+                                <div className="w-1/3 md:w-1/4 p-2 text-xs rounded-full border border-black bg-[#bc95d4] text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none flex items-center justify-center">
                                     <p>{event.time}</p>
                                 </div>
                                 <div className="w-1/2 rounded-md border-2 border-black bg-green-200 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-2 text-xs">
@@ -102,7 +102,7 @@ const Timeline = () => {
                     <div className="flex flex-col gap-4 p-4">
                         {timeline_day2.map((event)=>
                             <div className="flex gap-4 justify-center">
-                                <div className="w-1/4 p-2 text-xs rounded-full border border-black bg-[#bc95d4] text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
+                                <div className="w-1/3 md:w-1/4 p-2 text-xs rounded-full border border-black bg-[#bc95d4] md:text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none flex items-center justify-center">
                                     <p>{event.time}</p>
                                 </div>
                                 <div className="w-1/2 rounded-md border-2 border-black bg-green-200 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-2 text-xs">
