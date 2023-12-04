@@ -20,19 +20,19 @@ interface FormProps { }
 const Form: React.FC<FormProps> = () => {
     interface Member {
         id: number;
-        name: string;
-        student_number: string;
-        phone: string;
-        year: string;
-        hosteller: string;
-        gender: string;
-        roll_number: string;
-        branch: string;
-        email: string;
+        name?: string;
+        student_number?: string;
+        phone?: string;
+        year?: string;
+        hosteller?: string;
+        gender?: string;
+        roll_number?: string;
+        branch?: string;
+        email?: string;
       }
 
     const [refreshReCaptcha, setRefreshReCaptcha] = useState(false);
-    const [members, setMembers] = useState<Member[]>([]);
+    const [members, setMembers] = useState<Member[]>([{id:1}]);
     const [memberCount, setMemberCount] = useState([1]);
     const [teamSize, setTeamSize] = useState<string>("0");
     const [teamName, setTeamName] = useState('');
