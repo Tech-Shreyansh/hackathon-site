@@ -19,6 +19,7 @@ const Detail: React.FC<DetailProps> = (props) => {
         register,
         formState: { errors },
         handleSubmit,
+        setValue
     } = useForm();
 
     const {
@@ -35,6 +36,18 @@ const Detail: React.FC<DetailProps> = (props) => {
     const [branch, setBranch] = useState<string | null>(null);
     const [year, setYear] = useState<string | null>(null);
     const [hosteller, setHosteller] = useState<string | null>(null);
+
+    useEffect(() => {
+        setValue("name", members[index - 1]?.name || "");
+        setValue("college_email", members[index - 1]?.email || "");
+        setValue("name", members[index - 1]?.name || "");
+        setValue("name", members[index - 1]?.name || "");
+        setValue("name", members[index - 1]?.name || "");
+        setGender(members[index - 1]?.gender ? members[index - 1]?.gender : null);
+        setBranch(members[index - 1]?.branch ? members[index - 1]?.branch : null);
+        setYear(members[index - 1]?.year ? members[index - 1]?.year : null);
+        setHosteller(members[index - 1]?.hosteller ? members[index - 1]?.hosteller : null);
+    }, [members]);
 
     useEffect(() => {
         const length = memberCount.length;
@@ -93,7 +106,9 @@ const Detail: React.FC<DetailProps> = (props) => {
             <section className="w-full">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex justify-between">
-                        <p className="font-bold text-blue-600 mb-4">{`Member ${index}`} Detail</p>
+                        <p className="font-bold text-blue-600 mb-4">
+                            {`Member ${index}`} Detail
+                        </p>
                         {index > 1 && (
                             <div className="flex justify-end">
                                 <button
@@ -114,11 +129,9 @@ const Detail: React.FC<DetailProps> = (props) => {
                                 className="rounded-md border-2 border-black p-[10px] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none w-full h-[46px] mt-2"
                                 type="text"
                                 placeholder="Enter Name"
-                                required={false}
-                                defaultValue={members[index - 1]?.name}
-                                {...register("name", {
-                                    pattern: /^(?=.*[a-zA-Z])[a-zA-Z\s]{1,30}$/,
-                                })}
+                                required={true}
+                                defaultValue={members[index - 1]?.name ? members[index - 1]?.name : ""}
+                                {...register("name", {pattern: /^(?=.*[a-zA-Z])[a-zA-Z\s]{1,30}$/})}
                             />
                             {errors.name?.type === "pattern" && (
                                 <span className="text-sm text-red-500 mt-1">
@@ -133,10 +146,9 @@ const Detail: React.FC<DetailProps> = (props) => {
                                 className="rounded-md border-2 border-black p-[10px] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none w-full h-[46px] mt-2"
                                 type="text"
                                 placeholder="Enter College Email"
-                                {...register("college_email", {
-                                    pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-                                })}
-                                required={false}
+                                {...register("college_email", {pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/})}
+                                required={true}
+                                defaultValue={members[index - 1]?.email ? members[index - 1]?.email : ""}
                             />
                             {errors.college_email?.type === "pattern" && (
                                 <span className="text-sm text-red-500 mt-1">
@@ -151,10 +163,11 @@ const Detail: React.FC<DetailProps> = (props) => {
                                 className="rounded-md border-2 border-black p-[10px] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none w-full h-[46px] mt-2"
                                 type="text"
                                 placeholder="Enter Student number"
-                                required={false}
+                                required={true}
                                 {...register("st_no", {
                                     pattern: /^[0-9]+$/,
                                 })}
+                                defaultValue={members[index - 1]?.student_number ? members[index - 1]?.student_number : ""}
                             />
                             {errors.st_no?.type === "pattern" && (
                                 <span className="text-sm text-red-500 mt-1">
@@ -174,9 +187,10 @@ const Detail: React.FC<DetailProps> = (props) => {
                                 {...register("contact", {
                                     pattern: /^[0-9]+$/,
                                 })}
-                                required={false}
+                                required={true}
                                 maxLength={10}
                                 minLength={10}
+                                defaultValue={members[index - 1]?.phone ? members[index - 1]?.phone : ""}
                             />
                             {errors.contact?.type === "pattern" && (
                                 <span className="text-sm text-red-500 mt-1">
@@ -191,10 +205,11 @@ const Detail: React.FC<DetailProps> = (props) => {
                                 className="rounded-md border-2 border-black p-[10px] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none w-full h-[46px] mt-2"
                                 type="text"
                                 placeholder="Enter Roll Number"
+                                defaultValue={members[index - 1]?.roll_number ? members[index - 1]?.roll_number : ""}
                                 {...register("roll_no", {
                                     pattern: /^[0-9]+$/,
                                 })}
-                                required={false}
+                                required={true}
                             />
                             {errors.roll_no?.type === "pattern" && (
                                 <span className="text-sm text-red-500 mt-1">
