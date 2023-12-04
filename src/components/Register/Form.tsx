@@ -152,7 +152,7 @@ const Form: React.FC<FormProps> = () => {
         <>
             <section className="w-11/12 md:w-4/5 m-16 mx-auto rounded-md border-2 border-black bg-[#bc95d4] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-8">
                 <p className="text-center text-3xl text-black font-bold">REGISTER</p>
-                <div className="w-full mb-6">
+                <div className="w-full mb-6 text-left">
                     <label className="text-base font-semibold">Team Name</label>
                     <br />
                     <input
