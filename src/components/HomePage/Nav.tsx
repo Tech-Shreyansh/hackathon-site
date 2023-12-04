@@ -19,7 +19,7 @@ function Nav() {
         },
         {
             section: "REGISTER",
-            link: ""
+            link: "/register"
         }
     ]
     return (
