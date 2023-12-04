@@ -79,14 +79,14 @@ const ProblemStatement = () => {
     };
 
     return (
-        <div id="ps" className="bg-orange-400 px-8 py-12  flex flex-col gap-8 border-b-4 border-black">
+        <div id="ps" className="bg-orange-300 px-8 py-12  flex flex-col gap-8 border-b-4 border-black">
             <p className="text-4xl lg:text-5xl text-center font-extrabold">Problem Statements</p>
             <Slider ref={sliderRef} {...settings}>
                 {problemStatements.map((statement, index) => (
                     <div className="px-4">
                         <div
                             key={index}
-                            className="p-2 space-y-2 rounded-md border-2 border-black bg-[#bc95d4] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-left"
+                            className="p-2 my-2 space-y-2 rounded-md border-2 border-black bg-violet-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-left"
                         >
                             <p className="text-xl font-bold">{statement.Heading}</p>
                             <p>{statement.Description}</p>
@@ -99,7 +99,7 @@ const ProblemStatement = () => {
                     role="button"
                     aria-label="Click to perform an action"
                     onClick={prevSlide}
-                    className="w-1/2 justify-center flex cursor-pointer items-center rounded-md border-2 border-black bg-[#bc95d4] px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+                    className="w-1/2 justify-center flex cursor-pointer items-center rounded-md border-2 border-black bg-violet-300 px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
                 >
                     <p>Previous</p>
                 </button>
@@ -107,7 +107,7 @@ const ProblemStatement = () => {
                     role="button"
                     aria-label="Click to perform an action"
                     onClick={nextSlide}
-                    className="w-1/2 justify-center flex cursor-pointer items-center rounded-md border-2 border-black bg-[#bc95d4] px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+                    className="w-1/2 justify-center flex cursor-pointer items-center rounded-md border-2 border-black bg-violet-300 px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
                 >
                     <p>Next</p>
                 </button>
