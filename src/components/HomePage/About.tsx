@@ -2,7 +2,7 @@ function About() {
   return (
     <div id="about">
       <div className="bg-pink-500 px-8 py-12  flex flex-col gap-8 border-b-4 border-black">
-        <p className="text-4xl lg:text-5xl text-center font-extrabold">About WinterHacks</p>
+        <p className="text-4xl lg:text-5xl text-center font-extrabold">About Hackubator</p>
         <div className="w-3/4 mx-auto bg-white rounded-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6 flex flex-col">
           <p className="text-base md:text-lg lg:text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
