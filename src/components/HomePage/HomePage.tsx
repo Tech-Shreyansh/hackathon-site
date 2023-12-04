@@ -8,18 +8,24 @@ import Nav from "./Nav";
 import Intro from "./Intro";
 import About from "./About";
 import Footer from "./Footer";
+import { FaStar } from "react-icons/fa";
 
 const HomePage = () => {
   const myItems = [
     "Coming Soon",
+    <FaStar className="inline-block mb-1" />,
     "Coming Soon",
+    <FaStar className="inline-block mb-1" />,
     "Coming Soon",
+    <FaStar className="inline-block mb-1" />,
     "Coming Soon",
+    <FaStar className="inline-block mb-1" />,
     "Coming Soon",
+    <FaStar className="inline-block mb-1" />,
     "Coming Soon",
+    <FaStar className="inline-block mb-1" />,
     "Coming Soon",
-    "Coming Soon",
-    "Coming Soon",
+    <FaStar className="inline-block mb-1" />,
   ];
   return (
     <div>
