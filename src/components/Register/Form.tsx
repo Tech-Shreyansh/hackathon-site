@@ -29,16 +29,17 @@ const Form: React.FC<FormProps> = () => {
         roll_number?: string;
         branch?: string;
         email?: string;
-      }
+    }
 
     const [refreshReCaptcha, setRefreshReCaptcha] = useState(false);
-    const [members, setMembers] = useState<Member[]>([{id:1}]);
+    const [members, setMembers] = useState<Member[]>([{ id: 1 }]);
     const [memberCount, setMemberCount] = useState([1]);
     const [teamSize, setTeamSize] = useState<string>("0");
     const [teamName, setTeamName] = useState('');
     const [error, setError] = useState('');
     const [load, setLoad] = useState(false);
     const [token, setToken] = useState('');
+    const [showCaptcha, setShowCaptcha] = useState(false)
 
     const key = process.env.key || "";
 
@@ -90,6 +91,7 @@ const Form: React.FC<FormProps> = () => {
     }, []);
 
     const onSubmit = async () => {
+        // setShowCaptcha(true)
         setRefreshReCaptcha((r) => !r);
         if (!teamName) {
             return toast('Team Name is required', {
@@ -127,13 +129,15 @@ const Form: React.FC<FormProps> = () => {
 
         console.warn(data, '108');
 
-        // await axios.post("https://hackubator-backend.silive.in/api/register/",data)
-        // .then((res)=>{
-        //   console.log(res)
-        // })
-        // .catch((err)=>{
-        //   console.log(err)
-        // })
+        // await axios.post("https://hackubator-backend.silive.in/api/register/", data)
+        //     .then((res) => {
+        //         console.log(res)
+        //         setShowCaptcha(false)
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //         setShowCaptcha(false)
+        //     })
     };
 
     useEffect(() => {
@@ -148,14 +152,14 @@ const Form: React.FC<FormProps> = () => {
         <>
             <section className="w-11/12 md:w-4/5 m-16 mx-auto rounded-md border-2 border-black bg-[#bc95d4] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-8">
                 <p className="text-center text-3xl text-black font-bold">REGISTER</p>
-                <div className="w-full mb-6">
+                <div className="w-full mb-6 text-left">
                     <label className="text-base font-semibold">Team Name</label>
                     <br />
                     <input
                         className="rounded-md border-2 border-black p-[10px] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none w-full md:w-1/2 h-[46px] mt-2"
                         type="text"
                         placeholder="Enter Team Name"
-                        required={false}
+                        required={true}
                         value={teamName}
                         onChange={(e) => {
                             setTeamName(e.target.value);
@@ -190,12 +194,12 @@ const Form: React.FC<FormProps> = () => {
                     : null}
 
                 {/* google v3 recaptcha */}
-                <GoogleReCaptchaProvider reCaptchaKey={key}>
+                {showCaptcha ? <GoogleReCaptchaProvider reCaptchaKey={key}>
                     <GoogleReCaptcha
                         onVerify={handleRecaptcha}
                         refreshReCaptcha={refreshReCaptcha}
                     />
-                </GoogleReCaptchaProvider>
+                </GoogleReCaptchaProvider> : null}
 
                 <div className="flex justify-end w-full">
                     <Button load={load} handleSubmit={onSubmit} />
